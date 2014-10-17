@@ -2,7 +2,7 @@ require 'kramdown'
 describe "normal fenced codeblock parsing" do
   text = <<__TEXT__
 # example document
-``` ruby
+``` {ruby}
 def valid?
   true
 end
@@ -22,7 +22,7 @@ end
 describe "file aware codeblock parsing" do
 	text = <<__TEXT__
 # example document
-``` ruby example.rb
+``` {ruby example.rb}
 def valid?
   true
 end
@@ -49,7 +49,7 @@ end
 describe "section aware codeblock parsing" do
 	text = <<__TEXT__
 # example document
-``` ruby example.rb:valid-section
+``` { ruby example.rb:valid-section }
 def valid?
   true
 end
@@ -76,7 +76,7 @@ describe "multiple section aware codeblock parsing" do
 	text = <<__TEXT__
 # example document
 
-``` ruby example_file.rb:valid
+``` { ruby example_file.rb:valid }
 def valid?
   true
 end
@@ -84,7 +84,7 @@ end
 
 # another
 
-``` ruby example_file.rb:invalid
+``` { ruby example_file.rb:invalid }
 def invalid?
   false
 end

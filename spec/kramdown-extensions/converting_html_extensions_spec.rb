@@ -56,6 +56,8 @@ __expected__
       false
     end
 {: .language-ruby}
+
+
 __expected__
 .chomp
   end
@@ -63,7 +65,7 @@ end
 
 describe "File Named Code fenced html output" do
   text = <<__TEXT__
-~~~ ruby example.rb
+~~~ { ruby example.rb }
 def valid?
   false
 end
@@ -92,7 +94,7 @@ end
 
 describe "File Named Code fenced html output for a section" do
   text = <<__TEXT__
-~~~ ruby example.rb:validation
+~~~ { ruby example.rb:validation }
 def valid?
   false
 end
@@ -121,7 +123,7 @@ end
 
 describe "File named fenced html output for a section referencing another section" do
   text = <<__TEXT__
-~~~ ruby example.rb:*
+~~~ { ruby example.rb:* }
 «main»
 main()
 ~~~

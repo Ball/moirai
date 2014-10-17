@@ -33,7 +33,7 @@ The list of kittens is handled in the following way:
 3. die, becaus if we can't convert kittens to json, we're in trouble.
 4. write our json kittens to the response
 
-``` go server.go:kittens_handler
+``` { go server.go:kittens_handler }
 func KittensHandler(w http.ResponseWriter, r* http.Request){
   w.Header().Set("content-type", "application/json")
   j, err := json.Marshal(KittensJSON{Kittens: kittens})
@@ -53,7 +53,7 @@ Creating a kitten contains the following steps:
 3. Then we add the kitten to the litter.
 4. We next turn the kitten back in to json, set the response type to json, and write it to the response.
 
-``` go server.go:create_kitten_handler
+```{ go server.go:create_kitten_handler }
 func CreateKittenHandler(w http.ResponseWriter, r *http.Request){
   var kittenJSON KittenJSON
   err := json.NewDecoder(r.Body).Decode(&kittenJSON)

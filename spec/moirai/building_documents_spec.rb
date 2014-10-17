@@ -24,7 +24,7 @@ describe "parse a document with code blocks that have a file name" do
 
   document_text = <<__TEXT__
 # example document
-``` ruby example.rb
+``` { ruby example.rb }
 def valid?
   true
 end
@@ -51,7 +51,7 @@ describe "parse a document with sections" do
   document_text = <<__TEXT__
 # Initialzer
 
-``` ruby src/multipart_example.rb:initializer
+``` { ruby src/multipart_example.rb:initializer }
 def initialize(*args)
   puts args
 end
@@ -59,7 +59,7 @@ end
 
 # Class Def
 
-``` ruby src/multipart_example.rb
+``` { ruby src/multipart_example.rb }
 class Example
 «initializer»
 end

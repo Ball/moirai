@@ -10,10 +10,15 @@ class Kramdown::Parser::Weavable < Kramdown::Parser::Kramdown
 
 	FENCED_CODE_MATCH = /^(([~`]){3,}) # back ticks or tildes for fencing
 	                     \s*?
+		             {
+		             \s*?
 		             (\w+)? # language (optional)
 			     \s*?
 			     ((?: \w | \/ | \\)+\.\w+)? # file name (optional. handles directories. requires an extension. no spaces)
                              (\:(?:\*|[\w-]+))? # Section Name (Optional)
+			     \s*?
+			     }
+			     \s*?
 			     \n
 			     (.*?) # Code
 			     ^\1\2*\s*?\n/xm
